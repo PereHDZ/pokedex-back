@@ -1,4 +1,5 @@
 import { pokemonTypeActions } from '../actions/index.js';
+import PokemonType from '../types/Pokemon-Type.js';
 
 export const populatePokemonTypes = async () => {
     const types = [
@@ -17,4 +18,13 @@ export const populatePokemonTypes = async () => {
         };
     }
     console.warn(`${types.length} POKEMON TYPES CREATED`);
+
+    try {
+        const pokemonTypes = await pokemonTypeActions.findAll();
+
+        
+    } catch (err) {
+        console.error(err);
+        throw err;
+    };
 };

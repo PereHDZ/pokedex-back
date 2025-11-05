@@ -15,7 +15,19 @@ const createPokemonType = async (pokemonType) => {
     return await pokemonTypeFunctions.create(pokemonType);
 };
 
+const findFiltered = async ({ _id, name }) => {
+    const params = {};
+    if (_id) {
+        params._id = _id;
+    }
+    if (name) {
+        params.name = name;
+    }
+    return await propertyTypeFunctions.findByQuery(params);
+};
+
 export default {
     ...pokemonTypeActions,
     createPokemonType,
+    findFiltered,
 };
