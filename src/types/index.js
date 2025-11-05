@@ -1,0 +1,1 @@
+export { default as PokemonTypeModel, PokemonTypeInput as PokemonTypeInputModel } from './Pokemon-Type';

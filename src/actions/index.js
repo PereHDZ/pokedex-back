@@ -1,0 +1,1 @@
+export { default as pokemonTypeActions } from './pokemon-type-action.js';
