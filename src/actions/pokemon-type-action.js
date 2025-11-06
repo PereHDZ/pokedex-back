@@ -1,4 +1,4 @@
-import pokemonTypeModel from '../models/model-type.js';
+import pokemonTypeModel from '../models/pokemon-type.js';
 import baseFunctions from './base/base-functions.js';
 import { WRONG_PARAMS } from '../utils/constants.js';
 
