@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { populatePokemonTypes } from './pokemon-types.js';
+import { getPokemonTypeMap } from './helpers/get-pokemon-type-map.js';
+import { populatePokemon } from './pokemon/gen-I/index.js';
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ const populateDB = async () => {
 		console.log('🗑️  Previous database dropped')
 
 		await populatePokemonTypes();
+		const typeMap = await getPokemonTypeMap();
+		await populatePokemon(typeMap);
 
 		console.log('🌱 Database population complete!')
 	} catch (err) {

@@ -9,7 +9,8 @@ const pokemonActions = {
 };
 
 const createPokemon = async (pokemon) => {
-  if (!pokemon || !pokemon._id || !pokemon.name || !pokemon.typing) {
+  console.log('Params being sent:', pokemon);
+  if (!pokemon || !pokemon.id || !pokemon.dexNum || !pokemon.name || !pokemon.typing) {
     throw WRONG_PARAMS;
   }
   return await pokemonFunctions.create(pokemon);
