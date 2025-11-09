@@ -34,9 +34,18 @@ const findFiltered = async ({ _id, name }) => {
 	return await pokemonTypeFunctions.findByQuery(params);
 };
 
+const findById = async (pokemonTypeId) => {
+  if (!pokemonTypeId) {
+    throw WRONG_PARAMS;
+  } else {
+    return await pokemonTypeFunctions.findById(pokemonTypeId)
+  }
+}
+
 export default {
 	...pokemonTypeActions,
 	createPokemonType,
 	updatePokemonType,
 	findFiltered,
+	findById,
 };

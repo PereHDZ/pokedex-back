@@ -10,6 +10,7 @@ const pokemonSchema = new Schema({
   typing: {
     type: [{ type: Schema.Types.ObjectId, ref: 'pokemonType' }]
   },
+  gen: { type: String, required: true },
 }, {
   timestamps: true,
 });

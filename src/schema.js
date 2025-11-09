@@ -1,13 +1,9 @@
-import { gql } from "graphql-tag";
+import { GraphQLSchema } from "graphql";
+import Query from './queries/index.js';
+import Mutation from './mutations/index.js';
 
-export const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
 
-export const resolvers = {
-  Query: {
-    hello: () => "Hello world 👋",
-  },
-};
+export const schema =  new GraphQLSchema({
+  mutation: Mutation,
+  query: Query,
+})

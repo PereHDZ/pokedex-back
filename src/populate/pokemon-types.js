@@ -140,7 +140,7 @@ export const populatePokemonTypes = async () => {
 				throw err;
 			};
 		}
-		console.log(`${updates.length} pokemon types updated`)
+		console.log(`${updates.length} POKEMON TYPES UPDATED`)
 	} catch (err) {
 		console.error(err);
 		throw err;

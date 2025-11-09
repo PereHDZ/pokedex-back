@@ -1,6 +1,6 @@
 import { GraphQLNonNull } from 'graphql';
-import { PokemonTypeInputModel, PokemonTypeModel } from '../types'
-import pokemonTypeActions from '../actions/pokemon-type-action';
+import { PokemonTypeInputModel, PokemonTypeModel } from '../types/index.js'
+import pokemonTypeActions from '../actions/pokemon-type-actions.js';
 
 const createPokemonType = {
 	type: new GraphQLNonNull(PokemonTypeModel),
@@ -15,7 +15,7 @@ const createPokemonType = {
 const updatePokemonType = {
 	type: new GraphQLNonNull(PokemonTypeModel),
 	args: {
-		pokemonType: { type: GraphQLNonNull(PokemonTypeInputModel) },
+		pokemonType: { type: new GraphQLNonNull(PokemonTypeInputModel) },
 	},
 	resolve(parent, args) {
 		return pokemonTypeActions.updatePokemonType(args.pokemonType);

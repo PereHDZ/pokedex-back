@@ -1,6 +1,6 @@
 import { GraphQLID, GraphQLList, GraphQLString } from 'graphql';
-import { PokemonTypeModel } from '../types';
-import pokemonTypeActions from '../actions/pokemon-type-action';
+import { PokemonTypeModel } from '../types/index.js';
+import pokemonTypeActions from '../actions/index.js';
 
 
 const pokemonTypes = {

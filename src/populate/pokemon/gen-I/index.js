@@ -5,6 +5,6 @@ export const populatePokemon = async (typeMap) => {
 
   count += await populateBulbasaurLine(typeMap)
 
-  console.log(`😺 ${count} pókemon populated`)
+  console.log(`😺 ${count} POKÉMON POPULATED`)
 }
 

@@ -1,31 +1,41 @@
-import express from "express";
-import http from "http";
-import cors from "cors";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-
-import { ApolloServer } from "@apollo/server";
-import { expressMiddleware } from "@apollo/server/express4";
-import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
-
-import { typeDefs, resolvers } from "./schema.js";
+import express from 'express';
+import http from 'http';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import { ApolloServer } from '@apollo/server';
+import { expressMiddleware } from '@apollo/server/express4';
+import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
+import { schema } from './schema.js';
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const httpServer = http.createServer(app);
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+	schema,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+});
+
 await server.start();
 
-app.use('/graphql', expressMiddleware(server));
+app.use(
+  '/graphql',
+  cors(),
+  express.json(),
+  expressMiddleware(server, {
+    context: async ({ req }) => ({ token: req.headers.authorization }),
+  }),
+);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 9000;
 
 mongoose.connect(process.env.MONGODB_URL)
-	.then(() => {
-		console.log('✅ Connected to MongoDB');
-		app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}/graphql`));
-	})
-	.catch((err) => console.error("❌ MongoDB connection error:", err));
+  .then(() => {
+    console.log('✅ Connected to MongoDB');
+    httpServer.listen(PORT, () => {
+      console.log(`🚀 Server ready at http://localhost:${PORT}/graphql`);
+    });
+  })
+  .catch(err => console.error('❌ MongoDB connection error:', err));
