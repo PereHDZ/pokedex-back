@@ -2,6 +2,7 @@ import { GraphQLBoolean, GraphQLID, GraphQLInputObjectType, GraphQLInt, GraphQLL
 import PokemonName, { PokemonNameInput } from './others/Pokemon-name.js'
 import PokemonType from './Pokemon-Type.js';
 import { pokemonTypeActions } from '../actions/index.js';
+import { PokemonEvolution, PokemonEvolutionInput } from './others/Pokemon-evolution.js';
 
 export const PokemonInput = new GraphQLInputObjectType({
   name: 'PokemonInput',
@@ -13,6 +14,7 @@ export const PokemonInput = new GraphQLInputObjectType({
     typing: { type: new GraphQLList(GraphQLID) },
     gen: { type: new GraphQLNonNull(GraphQLString) },
     baseForm: { type: GraphQLBoolean },
+    evolutions: { type: new GraphQLList(PokemonEvolutionInput) },
   }),
 });
 
@@ -37,5 +39,18 @@ export default new GraphQLObjectType({
     },
     gen: { type: new GraphQLNonNull(GraphQLString) },
     baseForm: { type: GraphQLBoolean },
+    evolutions: {
+      type: new GraphQLList(PokemonEvolution),
+      resolve: async (parent, args, context) => {
+        if (!parent.evolutions) return [];
+        return parent.evolutions.map(evo => ({
+          toId: evo.toId,
+          method: evo.method,
+          level: evo.level,
+          item: evo.item,
+          conditions: evo.conditions,
+        }));
+      },
+    },
   }),
 });

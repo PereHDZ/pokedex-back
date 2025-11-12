@@ -17,7 +17,7 @@ const createPokemonType = async (pokemonType) => {
 
 const updatePokemonType = async (pokemonType) => {
 	if (!pokemonType || !pokemonType._id) {
-			throw WRONG_PARAMS;
+		throw WRONG_PARAMS;
 	}
 	const { _id, ...update } = pokemonType;
 	return await pokemonTypeFunctions.update(_id, update);

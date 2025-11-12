@@ -12,6 +12,17 @@ const createPokemon = {
   },
 };
 
+const updatePokemon = {
+  type: new GraphQLNonNull(PokemonModel),
+  args: {
+    pokemon: { type: new GraphQLNonNull(PokemonInputModel) },
+  },
+  resolve(parent, args) {
+    return pokemonActions.updatePokemon(args.pokemon);
+  }
+};
+
 export default {
   createPokemon,
+  updatePokemon,
 }

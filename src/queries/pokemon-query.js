@@ -9,7 +9,6 @@ const pokemons = {
     baseForm: { type: GraphQLBoolean },
   },
   async resolve(_, args) {
-    console.warn('args: ', args)
     return await pokemonActions.findFiltered(args);
   },
 };

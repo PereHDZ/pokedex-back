@@ -21,6 +21,14 @@ const createPokemon = async (pokemon) => {
   return await pokemonFunctions.create(pokemon);
 };
 
+const updatePokemon = async (pokemon) => {
+  if (!pokemon || !pokemon._id) {
+    throw WRONG_PARAMS;
+  }
+  const { _id, ...update } = pokemon;
+  return await pokemonFunctions.update(_id, update);
+};
+
 const findFiltered = async ({ _id, id, dexNum, name, gen, baseForm }) => {
   const params = {};
   if(_id) {
@@ -47,5 +55,6 @@ const findFiltered = async ({ _id, id, dexNum, name, gen, baseForm }) => {
 export default {
   ...pokemonActions,
   createPokemon,
+  updatePokemon,
   findFiltered,
 }

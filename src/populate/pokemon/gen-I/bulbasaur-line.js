@@ -29,9 +29,26 @@ export const populateBulbasaurLine = async (typeMap) => {
     },
   ]
 
-  for (const pokemon of pokemons) {
-    await pokemonActions.createPokemon(pokemon);
-  }
+  const createdPokemon = await Promise.all(
+    pokemons.map(pokemon => pokemonActions.createPokemon(pokemon))
+  )
+
+  await pokemonActions.updatePokemon({
+    _id: createdPokemon[0]._id, 
+    evolutions: [{ 
+      toId: createdPokemon[1]._id, 
+      method: 'level-up', 
+      level: 16 
+    }]
+  });
+  await pokemonActions.updatePokemon({
+    _id: createdPokemon[1]._id, 
+    evolutions: [{
+      toId: createdPokemon[2]._id, 
+      method: 'level-up', 
+      level: 32 
+    }]
+  })
 
   return pokemons.length
-}
+} 
