@@ -5,24 +5,27 @@ export const populateBulbasaurLine = async (typeMap) => {
   const pokemons = [
     {
       id: '0001',
-      dexNum: 1,
+      dexNum: '0001',
       name: { en: 'Bulbasaur' },
       typing: [ getPokemonTypeId(typeMap, 'grass'), getPokemonTypeId(typeMap, 'poison') ],
       gen: 'i',
+      baseForm: true,
     },
     {
       id: '0002',
-      dexNum: 2,
+      dexNum: '0002',
       name: { en: 'Ivysaur' },
       typing: [ getPokemonTypeId(typeMap, 'grass'), getPokemonTypeId(typeMap, 'poison') ],
       gen: 'i',
+      baseForm: true,
     },
     {
       id: '0003',
-      dexNum: 3,
+      dexNum: '0003',
       name: { en: 'Venusaur' },
       typing: [ getPokemonTypeId(typeMap, 'grass'), getPokemonTypeId(typeMap, 'poison') ],
       gen: 'i',
+      baseForm: true,
     },
   ]
 

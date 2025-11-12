@@ -9,15 +9,19 @@ const pokemonActions = {
 };
 
 const createPokemon = async (pokemon) => {
-  // console.log('Params being sent:', pokemon);
-  if (!pokemon || !pokemon.id || !pokemon.dexNum || !pokemon.name || !pokemon.typing) {
+  if (!pokemon || 
+    !pokemon.id || 
+    !pokemon.dexNum || 
+    !pokemon.name || 
+    !pokemon.typing ||
+    !pokemon.gen
+  ) {
     throw WRONG_PARAMS;
   }
   return await pokemonFunctions.create(pokemon);
 };
 
-const findFiltered = async ({ _id, id, dexNum, name, gen }) => {
-  console.log('findFiltered called with:', { _id, id, dexNum, name, gen });
+const findFiltered = async ({ _id, id, dexNum, name, gen, baseForm }) => {
   const params = {};
   if(_id) {
     params._id = _id;
@@ -34,7 +38,9 @@ const findFiltered = async ({ _id, id, dexNum, name, gen }) => {
   if(gen) {
     params.gen = gen;
   }
-  console.log('Final params for findByQuery:', params);
+  if(baseForm !== undefined) {
+    params.baseForm = baseForm;
+  }
   return await pokemonActions.findByQuery(params);
 };
 
