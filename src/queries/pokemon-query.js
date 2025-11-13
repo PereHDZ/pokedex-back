@@ -9,7 +9,9 @@ const pokemons = {
     baseForm: { type: GraphQLBoolean },
   },
   async resolve(_, args) {
-    return await pokemonActions.findFiltered(args);
+    const pokemon = await pokemonActions.findFiltered(args);
+    if (!pokemon) return;
+    return pokemon.sort((a, b) => a.dexNum.localeCompare(b.dexNum));
   },
 };
 

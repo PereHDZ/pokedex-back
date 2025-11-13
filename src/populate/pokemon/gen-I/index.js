@@ -1,20 +1,12 @@
-import { populateBulbasaurLine } from './bulbasaur-line.js';
-import { populateCaterpieLine } from './caterpie-line.js';
-import { populateCharmanderLine } from './charmander-line.js';
-import { populatePidgeyLine } from './pidgey-line.js';
-import { populateSquirtleLine } from './squirtle-line.js';
-import { populateWeedleLine } from './weedle-line.js';
+import { populate0001To0010 } from './0001-0010.js';
+import { populate0011To0020 } from './0011-0020.js';
 
-export const populatePokemon = async (typeMap) => {
+export const populateGenI = async (typeMap) => {
   let count = 0;
 
-  count += await populateBulbasaurLine(typeMap)
-  count += await populateCharmanderLine(typeMap);
-  count += await populateSquirtleLine(typeMap);
-  count += await populateCaterpieLine(typeMap);
-  count += await populateWeedleLine(typeMap);
-  count += await populatePidgeyLine(typeMap);
+  count += await populate0001To0010(typeMap)
+  count += await populate0011To0020(typeMap);
 
-  console.log(`😺 ${count} POKÉMON POPULATED`)
+  return count;
 }
 

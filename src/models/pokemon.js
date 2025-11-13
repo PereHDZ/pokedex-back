@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 import { EVOLUTION_METHODS } from "../utils/constants.js";
 
 const pokemonSchema = new Schema({
-  id: { type: String, required: true, unique: true, maxlength: 50 },
+  identification: { type: String, required: true, unique: true, maxlength: 50 },
   dexNum: { type: String, required: true },
   name: {
     en: { type: String, trim: true, maxlength: 50 },
@@ -13,15 +13,7 @@ const pokemonSchema = new Schema({
   },
   gen: { type: String, required: true },
   baseForm: { type: Boolean },
-  evolutions: {
-    type: [{ 
-      toId: { type: Schema.Types.ObjectId, ref: 'pokemon'},
-      method: { type: String, enum: EVOLUTION_METHODS, required: true },
-      level: { type: Number },
-      item: { type: String },
-      conditions: { type: String },
-    }]
-  }, 
+  evolutionLineId: { type: Schema.Types.ObjectId, ref: 'evolutionLine' }, 
 }, {
   timestamps: true,
 });

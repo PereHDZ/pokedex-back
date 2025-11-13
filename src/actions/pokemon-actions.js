@@ -10,7 +10,7 @@ const pokemonActions = {
 
 const createPokemon = async (pokemon) => {
   if (!pokemon || 
-    !pokemon.id || 
+    !pokemon.identification || 
     !pokemon.dexNum || 
     !pokemon.name || 
     !pokemon.typing ||
@@ -29,13 +29,13 @@ const updatePokemon = async (pokemon) => {
   return await pokemonFunctions.update(_id, update);
 };
 
-const findFiltered = async ({ _id, id, dexNum, name, gen, baseForm }) => {
+const findFiltered = async ({ _id, identification, dexNum, name, gen, baseForm }) => {
   const params = {};
   if(_id) {
     params._id = _id;
   }
-  if(id) {
-    params.id = id;
+  if(identification) {
+    params.identification = identification;
   }
   if(dexNum) {
     params.dexNum = dexNum;
