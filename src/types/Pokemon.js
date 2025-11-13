@@ -14,7 +14,7 @@ export const PokemonInput = new GraphQLInputObjectType({
     typing: { type: new GraphQLList(GraphQLID) },
     gen: { type: new GraphQLNonNull(GraphQLString) },
     baseForm: { type: GraphQLBoolean },
-    evolutionLoneId: { type: GraphQLID },
+    evolutionLineId: { type: GraphQLID },
   }),
 });
 

@@ -30,7 +30,10 @@ export const populateBulbasaurLine = async () => {
     stages,
   }
 
-  await evolutionLineActions.createEvolutionLine(evolutionLine);
+  const line = await evolutionLineActions.createEvolutionLine(evolutionLine);
+  await pokemonActions.updatePokemon({ _id: bulbasaur._id, evolutionLineId: line._id });
+  await pokemonActions.updatePokemon({ _id: ivysaur._id, evolutionLineId: line._id });
+  await pokemonActions.updatePokemon({ _id: venusaur._id, evolutionLineId: line._id });
 
   return 1;
 }

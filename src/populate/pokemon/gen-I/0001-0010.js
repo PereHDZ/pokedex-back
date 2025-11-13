@@ -89,22 +89,5 @@ export const populate0001To0010 = async (typeMap) => {
     pokemons.map(pokemon => pokemonActions.createPokemon(pokemon))
   )
 
-  // await pokemonActions.updatePokemon({
-  //   _id: createdPokemon[0]._id, 
-  //   evolutions: [{ 
-  //     toId: createdPokemon[1]._id, 
-  //     method: 'level-up', 
-  //     level: 16 
-  //   }]
-  // });
-  // await pokemonActions.updatePokemon({
-  //   _id: createdPokemon[1]._id, 
-  //   evolutions: [{
-  //     toId: createdPokemon[2]._id, 
-  //     method: 'level-up', 
-  //     level: 32 
-  //   }]
-  // });
-
   return createdPokemon.length;
 };
