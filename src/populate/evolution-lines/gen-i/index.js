@@ -1,14 +1,17 @@
 import { populateBulbasaurLine } from './bulbasaur-line.js';
 import { populateCaterpieLine } from './caterpie-line.js';
 import { populateCharmanderLine } from './charmander-line.js';
+import { populateClefairyLine } from './clefairy-line.js';
 import { populateEkansLine } from './ekans-line.js';
 import { populateNidoranFLine } from './Nidoran♀-line.js';
+import { populateNidoranMLine } from './nidoran♂-line.js';
 import { populatePidgeyLine } from './pidgey-line.js';
 import { populatePikachuLine } from './pikachu-line.js';
 import { populateRattataLine } from './rattata-line.js';
 import { populateSandshrewLine } from './sandshrew-line.js';
 import { populateSpearowLine } from './spearow-line.js';
 import { populateSquirtleLine } from './squirtle-line.js';
+import { populateVulpixLine } from './vulpix-line.js';
 import { populateWeedleLine } from './weedle-line.js';
 
 export const populateGenIEvos = async () => {
@@ -26,6 +29,9 @@ export const populateGenIEvos = async () => {
   count += await populatePikachuLine();
   count += await populateSandshrewLine();
   count += await populateNidoranFLine();
+  count += await populateNidoranMLine();
+  count += await populateClefairyLine();
+  count += await populateVulpixLine();
 
   return count;
 }
