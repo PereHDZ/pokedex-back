@@ -8,6 +8,7 @@ import { populate0061To0070 } from './0061-0070.js';
 import { populate0071To0080 } from './0071-0080.js';
 import { populate0081To0090 } from './0081-0090.js';
 import { populate0091To0100 } from './0091-0100.js';
+import { populate0101To0100 } from './0101-0110.js';
 
 export const populateGenI = async (typeMap) => {
   let count = 0;
@@ -22,6 +23,7 @@ export const populateGenI = async (typeMap) => {
   count += await populate0071To0080(typeMap);
   count += await populate0081To0090(typeMap);
   count += await populate0091To0100(typeMap);
+  count += await populate0101To0100(typeMap);
 
   return count;
 }

@@ -6,10 +6,13 @@ import { populateCharmanderLine } from './charmander-line.js';
 import { populateClefairyLine } from './clefairy-line.js';
 import { populateDiglettLine } from './diglett-line..js';
 import { populateDoduoLine } from './doduo-line.js';
+import { populateDrowzeeLine } from './drowzee-line.js';
 import { populateEkansLine } from './ekans-line.js';
+import { populateGastlyLine } from './gastly-line.js';
 import { populateGeodudeLine } from './geodude-line.js';
 import { populateGrimerLine } from './grimer-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
+import { populateKrabbyLine } from './krabby-line.js';
 import { populateMachopLine } from './machop-line.js';
 import { populateMagnemiteLine } from './magnemite-line.js';
 import { populateMankeyLine } from './mankey-line.js';
@@ -32,6 +35,7 @@ import { populateSpearowLine } from './spearow-line.js';
 import { populateSquirtleLine } from './squirtle-line.js';
 import { populateTentacoolLine } from './tentacool-line.js';
 import { populateVenonatLine } from './venonat-line.js';
+import { populateVoltorbLine } from './voltorb-line.js';
 import { populateVulpixLine } from './vulpix-line.js';
 import { populateWeedleLine } from './weedle-line.js';
 import { populateZubatLine } from './zubat-line.js';
@@ -76,6 +80,10 @@ export const populateGenIEvos = async () => {
   count += await populateSeelLine();
   count += await populateGrimerLine();
   count += await populateShellderLine();
+  count += await populateGastlyLine();
+  count += await populateDrowzeeLine();
+  count += await populateKrabbyLine();
+  count += await populateVoltorbLine();
 
   return count;
 }
