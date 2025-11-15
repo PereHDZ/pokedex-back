@@ -6,6 +6,7 @@ import { populateCharmanderLine } from './charmander-line.js';
 import { populateClefairyLine } from './clefairy-line.js';
 import { populateDiglettLine } from './diglett-line..js';
 import { populateEkansLine } from './ekans-line.js';
+import { populateGeodudeLine } from './geodude-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
 import { populateMachopLine } from './machop-line.js';
 import { populateMankeyLine } from './mankey-line.js';
@@ -17,11 +18,14 @@ import { populateParasLine } from './paras-line.js';
 import { populatePidgeyLine } from './pidgey-line.js';
 import { populatePikachuLine } from './pikachu-line.js';
 import { populatePoliwagLine } from './poliwag-line.js';
+import { populatePonytaLine } from './ponyta-line.js';
 import { populatePsyduckLine } from './psyduck-line.js';
 import { populateRattataLine } from './rattata-line.js';
 import { populateSandshrewLine } from './sandshrew-line.js';
+import { populateSlowpokeLine } from './slowpoke-line.js';
 import { populateSpearowLine } from './spearow-line.js';
 import { populateSquirtleLine } from './squirtle-line.js';
+import { populateTentacoolLine } from './tentacool-line.js';
 import { populateVenonatLine } from './venonat-line.js';
 import { populateVulpixLine } from './vulpix-line.js';
 import { populateWeedleLine } from './weedle-line.js';
@@ -58,6 +62,10 @@ export const populateGenIEvos = async () => {
   count += await populateAbraLine();
   count += await populateMachopLine();
   count += await populateBellsproutLine();
+  count += await populateTentacoolLine();
+  count += await populateGeodudeLine();
+  count += await populatePonytaLine();
+  count += await populateSlowpokeLine();
 
   return count;
 }
