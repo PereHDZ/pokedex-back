@@ -11,7 +11,7 @@ export const populateRattataLine = async () => {
 
   const stages = [
     {
-      form: rattata._id,
+      from: rattata._id,
       to: raticate._id,
       method: 'level',
       level: 20,

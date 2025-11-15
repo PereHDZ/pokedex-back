@@ -12,13 +12,13 @@ export const populateCaterpieLine = async () => {
 
   const stages = [
     {
-      form: caterpie._id,
+      from: caterpie._id,
       to: metapod._id,
       method: 'level',
       level: 7,
     },
     {
-      form: metapod._id,
+      from: metapod._id,
       to: butterfree._id,
       method: 'level',
       level: 10,

@@ -12,13 +12,13 @@ export const populateSquirtleLine = async () => {
 
   const stages = [
     {
-      form: squirtle._id,
+      WebGLShaderPrecisionFormat: squirtle._id,
       to: wartortle._id,
       method: 'level',
       level: 16,
     },
     {
-      form: wartortle._id,
+      WebGLShaderPrecisionFormat: wartortle._id,
       to: blastoise._id,
       method: 'level',
       level: 32,

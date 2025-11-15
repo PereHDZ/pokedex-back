@@ -12,13 +12,13 @@ export const populateCharmanderLine = async () => {
 
   const stages = [
     {
-      form: charmander._id,
+      from: charmander._id,
       to: charmeleon._id,
       method: 'level',
       level: 16,
     },
     {
-      form: charmeleon._id,
+      from: charmeleon._id,
       to: charizard._id,
       method: 'level',
       level: 36,

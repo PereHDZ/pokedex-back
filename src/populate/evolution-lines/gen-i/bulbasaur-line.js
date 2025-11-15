@@ -12,13 +12,13 @@ export const populateBulbasaurLine = async () => {
 
   const stages = [
     {
-      form: bulbasaur._id,
+      from: bulbasaur._id,
       to: ivysaur._id,
       method: 'level',
       level: 16,
     },
     {
-      form: ivysaur._id,
+      from: ivysaur._id,
       to: venusaur._id,
       method: 'level',
       level: 32,

@@ -12,13 +12,13 @@ export const populatePidgeyLine = async () => {
 
   const stages = [
     {
-      form: pidgey._id,
+      from: pidgey._id,
       to: pidgeotto._id,
       method: 'level',
       level: 18,
     },
     {
-      form: pidgeotto._id,
+      from: pidgeotto._id,
       to: pidgeot._id,
       method: 'level',
       level: 36,

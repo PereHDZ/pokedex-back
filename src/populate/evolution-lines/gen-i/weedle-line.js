@@ -12,13 +12,13 @@ export const populateWeedleLine = async () => {
 
   const stages = [
     {
-      form: weedle._id,
+      from: weedle._id,
       to: kakuna._id,
       method: 'level',
       level: 7,
     },
     {
-      form: kakuna._id,
+      from: kakuna._id,
       to: beedrill._id,
       method: 'level',
       level: 10,
