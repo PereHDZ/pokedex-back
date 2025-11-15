@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populateJigglypuffLine = async () => {
   const jigglypuff = await pokemonActions.findOneByQuery({ identification: '0039' });
@@ -13,8 +14,8 @@ export const populateJigglypuffLine = async () => {
     {
       from: jigglypuff._id,
       to: wigglytuff._id,
-      method: 'item',
-      item: 'Moon Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.MOON_STONE,
     },
   ];
 

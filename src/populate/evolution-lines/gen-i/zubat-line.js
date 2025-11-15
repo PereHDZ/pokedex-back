@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateZubatLine = async () => {
   const zubat = await pokemonActions.findOneByQuery({ identification: '0041' });
@@ -13,7 +14,7 @@ export const populateZubatLine = async () => {
     {
       from: zubat._id,
       to: golbat._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 22,
     },
   ];

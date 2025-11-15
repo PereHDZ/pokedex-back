@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateMankeyLine = async () => {
   const mankey = await pokemonActions.findOneByQuery({ identification: '0056' });
@@ -13,7 +14,7 @@ export const populateMankeyLine = async () => {
     {
       from: mankey._id,
       to: primeape._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 28,
     },
   ];

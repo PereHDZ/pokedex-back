@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populateClefairyLine = async () => {
   const clefairy = await pokemonActions.findOneByQuery({ identification: '0035' });
@@ -13,8 +14,8 @@ export const populateClefairyLine = async () => {
     {
       from: clefairy._id,
       to: clefable._id,
-      method: 'item',
-      item: 'Moon Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.MOON_STONE,
     },
   ];
 

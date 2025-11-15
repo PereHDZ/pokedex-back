@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateSquirtleLine = async () => {
   const squirtle = await pokemonActions.findOneByQuery({ identification: '0007' });
@@ -14,13 +15,13 @@ export const populateSquirtleLine = async () => {
     {
       WebGLShaderPrecisionFormat: squirtle._id,
       to: wartortle._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 16,
     },
     {
       WebGLShaderPrecisionFormat: wartortle._id,
       to: blastoise._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 32,
     },
   ];

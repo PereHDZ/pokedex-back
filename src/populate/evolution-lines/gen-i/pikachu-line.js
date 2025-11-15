@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populatePikachuLine = async () => {
   const pikachu = await pokemonActions.findOneByQuery({ identification: '0025' });
@@ -13,8 +14,8 @@ export const populatePikachuLine = async () => {
     {
       from: pikachu._id,
       to: raichu._id,
-      method: 'item',
-      item: 'Thunder Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.THUNDER_STONE,
     },
   ];
 

@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateCaterpieLine = async () => {
   const caterpie = await pokemonActions.findOneByQuery({ identification: '0010' });
@@ -14,13 +15,13 @@ export const populateCaterpieLine = async () => {
     {
       from: caterpie._id,
       to: metapod._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 7,
     },
     {
       from: metapod._id,
       to: butterfree._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 10,
     },
   ];

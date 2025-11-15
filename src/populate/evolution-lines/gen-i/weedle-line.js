@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateWeedleLine = async () => {
   const weedle = await pokemonActions.findOneByQuery({ identification: '0013' });
@@ -14,13 +15,13 @@ export const populateWeedleLine = async () => {
     {
       from: weedle._id,
       to: kakuna._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 7,
     },
     {
       from: kakuna._id,
       to: beedrill._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 10,
     },
   ];

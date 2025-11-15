@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populateOddishLine = async () => {
   const oddish = await pokemonActions.findOneByQuery({ identification: '0043' });
@@ -14,14 +15,14 @@ export const populateOddishLine = async () => {
     {
       from: oddish._id,
       to: gloom._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 21,
     },
     {
       from: gloom._id,
       to: vileplume._id,
-      method: 'item',
-      item: 'Leaf Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.LEAF_STONE,
     },
   ];
 

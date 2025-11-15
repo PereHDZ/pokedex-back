@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateEkansLine = async () => {
   const ekans = await pokemonActions.findOneByQuery({ identification: '0023' });
@@ -13,7 +14,7 @@ export const populateEkansLine = async () => {
     {
       from: ekans._id,
       to: arbok._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 22,
     },
   ];

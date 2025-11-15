@@ -1,3 +1,5 @@
+import { populateAbraLine } from './abra-line.js';
+import { populateBellsproutLine } from './bellsprout-line.js';
 import { populateBulbasaurLine } from './bulbasaur-line.js';
 import { populateCaterpieLine } from './caterpie-line.js';
 import { populateCharmanderLine } from './charmander-line.js';
@@ -5,6 +7,7 @@ import { populateClefairyLine } from './clefairy-line.js';
 import { populateDiglettLine } from './diglett-line..js';
 import { populateEkansLine } from './ekans-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
+import { populateMachopLine } from './machop-line.js';
 import { populateMankeyLine } from './mankey-line.js';
 import { populateMeowthLine } from './meowth-line.js';
 import { populateNidoranFLine } from './Nidoran♀-line.js';
@@ -52,6 +55,9 @@ export const populateGenIEvos = async () => {
   count += await populateMankeyLine();
   count += await populateGrowlitheLine();
   count += await populatePoliwagLine();
+  count += await populateAbraLine();
+  count += await populateMachopLine();
+  count += await populateBellsproutLine();
 
   return count;
 }

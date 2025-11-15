@@ -54,7 +54,7 @@ export const populate0001To0010 = async (typeMap) => {
     {
       identification: '0007',
       dexNum: '0007',
-      name: { en: 'Charmander' },
+      name: { en: 'Squirtle' },
       typing: [ getPokemonTypeId(typeMap, 'water') ],
       gen: 'i',
       baseForm: true,

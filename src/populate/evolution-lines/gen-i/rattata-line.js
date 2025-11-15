@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateRattataLine = async () => {
   const rattata = await pokemonActions.findOneByQuery({ identification: '0019' });
@@ -13,7 +14,7 @@ export const populateRattataLine = async () => {
     {
       from: rattata._id,
       to: raticate._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 20,
     },
   ];

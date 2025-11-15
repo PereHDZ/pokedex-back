@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateCharmanderLine = async () => {
   const charmander = await pokemonActions.findOneByQuery({ identification: '0004' });
@@ -14,13 +15,13 @@ export const populateCharmanderLine = async () => {
     {
       from: charmander._id,
       to: charmeleon._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 16,
     },
     {
       from: charmeleon._id,
       to: charizard._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 36,
     },
   ];

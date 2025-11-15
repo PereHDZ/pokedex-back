@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populateVulpixLine = async () => {
   const vulpix = await pokemonActions.findOneByQuery({ identification: '0037' });
@@ -13,8 +14,8 @@ export const populateVulpixLine = async () => {
     {
       from: vulpix._id,
       to: ninetales._id,
-      method: 'item',
-      item: 'Fire Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.FIRE_STONE,
     },
   ];
 

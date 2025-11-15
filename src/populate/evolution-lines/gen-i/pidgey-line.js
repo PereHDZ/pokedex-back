@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populatePidgeyLine = async () => {
   const pidgey = await pokemonActions.findOneByQuery({ identification: '0016' });
@@ -14,13 +15,13 @@ export const populatePidgeyLine = async () => {
     {
       from: pidgey._id,
       to: pidgeotto._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 18,
     },
     {
       from: pidgeotto._id,
       to: pidgeot._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 36,
     },
   ];

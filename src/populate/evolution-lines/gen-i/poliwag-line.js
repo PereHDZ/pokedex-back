@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populatePoliwagLine = async () => {
   const poliwag = await pokemonActions.findOneByQuery({ identification: '0060' });
@@ -14,14 +15,14 @@ export const populatePoliwagLine = async () => {
     {
       from: poliwag._id,
       to: poliwhirl._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 25,
     },
     {
       from: poliwhirl._id,
       to: poliwrath._id,
-      method: 'item',
-      item: 'Water Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.WATER_STONE,
     },
   ];
 

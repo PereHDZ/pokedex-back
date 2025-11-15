@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES, EVOLUTION_STONES_VALUES } from "../../../utils/constants.js";
 
 export const populateGrowlitheLine = async () => {
   const growlithe = await pokemonActions.findOneByQuery({ identification: '0058' });
@@ -13,8 +14,8 @@ export const populateGrowlitheLine = async () => {
     {
       from: growlithe._id,
       to: arcanine._id,
-      method: 'item',
-      item: 'Fire Stone',
+      method: EVOLUTION_METHODS_VALUES.ITEM,
+      item: EVOLUTION_STONES_VALUES.FIRE_STONE,
     },
   ];
 

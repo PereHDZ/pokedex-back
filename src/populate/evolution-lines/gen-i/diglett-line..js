@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateDiglettLine = async () => {
   const diglett = await pokemonActions.findOneByQuery({ identification: '0050' });
@@ -13,7 +14,7 @@ export const populateDiglettLine = async () => {
     {
       from: diglett._id,
       to: dugtrio._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 26,
     },
   ];

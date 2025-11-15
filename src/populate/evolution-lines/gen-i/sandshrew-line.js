@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateSandshrewLine = async () => {
   const sandshrew = await pokemonActions.findOneByQuery({ identification: '0027' });
@@ -13,7 +14,7 @@ export const populateSandshrewLine = async () => {
     {
       from: sandshrew._id,
       to: sandslash._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 22,
     },
   ];

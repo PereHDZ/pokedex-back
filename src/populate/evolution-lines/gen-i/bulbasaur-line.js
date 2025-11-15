@@ -1,5 +1,6 @@
 import evolutionLineActions from "../../../actions/evolution-line-actions.js";
 import pokemonActions from "../../../actions/pokemon-actions.js"
+import { EVOLUTION_METHODS_VALUES } from "../../../utils/constants.js";
 
 export const populateBulbasaurLine = async () => {
   const bulbasaur = await pokemonActions.findOneByQuery({ identification: '0001' });
@@ -14,13 +15,13 @@ export const populateBulbasaurLine = async () => {
     {
       from: bulbasaur._id,
       to: ivysaur._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 16,
     },
     {
       from: ivysaur._id,
       to: venusaur._id,
-      method: 'level',
+      method: EVOLUTION_METHODS_VALUES.LEVEL,
       level: 32,
     },
   ];
