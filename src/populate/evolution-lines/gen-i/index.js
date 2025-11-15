@@ -5,10 +5,13 @@ import { populateCaterpieLine } from './caterpie-line.js';
 import { populateCharmanderLine } from './charmander-line.js';
 import { populateClefairyLine } from './clefairy-line.js';
 import { populateDiglettLine } from './diglett-line..js';
+import { populateDoduoLine } from './doduo-line.js';
 import { populateEkansLine } from './ekans-line.js';
 import { populateGeodudeLine } from './geodude-line.js';
+import { populateGrimerLine } from './grimer-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
 import { populateMachopLine } from './machop-line.js';
+import { populateMagnemiteLine } from './magnemite-line.js';
 import { populateMankeyLine } from './mankey-line.js';
 import { populateMeowthLine } from './meowth-line.js';
 import { populateNidoranFLine } from './Nidoran♀-line.js';
@@ -22,6 +25,8 @@ import { populatePonytaLine } from './ponyta-line.js';
 import { populatePsyduckLine } from './psyduck-line.js';
 import { populateRattataLine } from './rattata-line.js';
 import { populateSandshrewLine } from './sandshrew-line.js';
+import { populateSeelLine } from './seel-line.js';
+import { populateShellderLine } from './shellder-line.js';
 import { populateSlowpokeLine } from './slowpoke-line.js';
 import { populateSpearowLine } from './spearow-line.js';
 import { populateSquirtleLine } from './squirtle-line.js';
@@ -66,6 +71,11 @@ export const populateGenIEvos = async () => {
   count += await populateGeodudeLine();
   count += await populatePonytaLine();
   count += await populateSlowpokeLine();
+  count += await populateMagnemiteLine();
+  count += await populateDoduoLine();
+  count += await populateSeelLine();
+  count += await populateGrimerLine();
+  count += await populateShellderLine();
 
   return count;
 }
