@@ -12,8 +12,10 @@ import { populateEkansLine } from './ekans-line.js';
 import { populateExeggcuteLine } from './exeggcute-line.js';
 import { populateGastlyLine } from './gastly-line.js';
 import { populateGeodudeLine } from './geodude-line.js';
+import { populateGoldeenLine } from './goldeen-line.js';
 import { populateGrimerLine } from './grimer-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
+import { populateHorseaLine } from './horsea-line.js';
 import { populateKoffingLine } from './koffing-line.js';
 import { populateKrabbyLine } from './krabby-line.js';
 import { populateMachopLine } from './machop-line.js';
@@ -30,12 +32,14 @@ import { populatePoliwagLine } from './poliwag-line.js';
 import { populatePonytaLine } from './ponyta-line.js';
 import { populatePsyduckLine } from './psyduck-line.js';
 import { populateRattataLine } from './rattata-line.js';
+import { populateRhyhornLine } from './rhyhorn-line.js';
 import { populateSandshrewLine } from './sandshrew-line.js';
 import { populateSeelLine } from './seel-line.js';
 import { populateShellderLine } from './shellder-line.js';
 import { populateSlowpokeLine } from './slowpoke-line.js';
 import { populateSpearowLine } from './spearow-line.js';
 import { populateSquirtleLine } from './squirtle-line.js';
+import { populateStaryuLine } from './staryu-line.js';
 import { populateTentacoolLine } from './tentacool-line.js';
 import { populateVenonatLine } from './venonat-line.js';
 import { populateVoltorbLine } from './voltorb-line.js';
@@ -90,6 +94,10 @@ export const populateGenIEvos = async () => {
   count += await populateExeggcuteLine();
   count += await populateCuboneLine();
   count += await populateKoffingLine();
+  count += await populateRhyhornLine();
+  count += await populateHorseaLine();
+  count += await populateGoldeenLine();
+  count += await populateStaryuLine();
 
   return count;
 }

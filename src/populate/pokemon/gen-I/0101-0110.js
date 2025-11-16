@@ -1,7 +1,7 @@
 import { pokemonActions } from "../../../actions/index.js"
 import { getPokemonTypeId } from "../../helpers/get-pokemon-type-id.js"
 
-export const populate0101To0100 = async (typeMap) => {
+export const populate0101To0110 = async (typeMap) => {
   const pokemons = [
     {
       identification: '0101',
