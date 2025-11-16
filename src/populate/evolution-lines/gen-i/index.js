@@ -4,14 +4,17 @@ import { populateBulbasaurLine } from './bulbasaur-line.js';
 import { populateCaterpieLine } from './caterpie-line.js';
 import { populateCharmanderLine } from './charmander-line.js';
 import { populateClefairyLine } from './clefairy-line.js';
+import { populateCuboneLine } from './cubone-line.js';
 import { populateDiglettLine } from './diglett-line..js';
 import { populateDoduoLine } from './doduo-line.js';
 import { populateDrowzeeLine } from './drowzee-line.js';
 import { populateEkansLine } from './ekans-line.js';
+import { populateExeggcuteLine } from './exeggcute-line.js';
 import { populateGastlyLine } from './gastly-line.js';
 import { populateGeodudeLine } from './geodude-line.js';
 import { populateGrimerLine } from './grimer-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
+import { populateKoffingLine } from './koffing-line.js';
 import { populateKrabbyLine } from './krabby-line.js';
 import { populateMachopLine } from './machop-line.js';
 import { populateMagnemiteLine } from './magnemite-line.js';
@@ -84,6 +87,9 @@ export const populateGenIEvos = async () => {
   count += await populateDrowzeeLine();
   count += await populateKrabbyLine();
   count += await populateVoltorbLine();
+  count += await populateExeggcuteLine();
+  count += await populateCuboneLine();
+  count += await populateKoffingLine();
 
   return count;
 }
