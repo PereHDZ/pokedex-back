@@ -19,6 +19,7 @@ import { populateHorseaLine } from './horsea-line.js';
 import { populateKoffingLine } from './koffing-line.js';
 import { populateKrabbyLine } from './krabby-line.js';
 import { populateMachopLine } from './machop-line.js';
+import { populateMagikarpLine } from './magikarp-line.js';
 import { populateMagnemiteLine } from './magnemite-line.js';
 import { populateMankeyLine } from './mankey-line.js';
 import { populateMeowthLine } from './meowth-line.js';
@@ -98,6 +99,7 @@ export const populateGenIEvos = async () => {
   count += await populateHorseaLine();
   count += await populateGoldeenLine();
   count += await populateStaryuLine();
+  count += await populateMagikarpLine();
 
   return count;
 }
