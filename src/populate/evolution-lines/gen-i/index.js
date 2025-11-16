@@ -7,7 +7,9 @@ import { populateClefairyLine } from './clefairy-line.js';
 import { populateCuboneLine } from './cubone-line.js';
 import { populateDiglettLine } from './diglett-line..js';
 import { populateDoduoLine } from './doduo-line.js';
+import { populateDratiniLine } from './dratini-line.js';
 import { populateDrowzeeLine } from './drowzee-line.js';
+import { populateEeveeLine } from './eevee-line.js';
 import { populateEkansLine } from './ekans-line.js';
 import { populateExeggcuteLine } from './exeggcute-line.js';
 import { populateGastlyLine } from './gastly-line.js';
@@ -16,6 +18,7 @@ import { populateGoldeenLine } from './goldeen-line.js';
 import { populateGrimerLine } from './grimer-line.js';
 import { populateGrowlitheLine } from './growlithe-line.js';
 import { populateHorseaLine } from './horsea-line.js';
+import { populateKabutoLine } from './kabuto-line.js';
 import { populateKoffingLine } from './koffing-line.js';
 import { populateKrabbyLine } from './krabby-line.js';
 import { populateMachopLine } from './machop-line.js';
@@ -26,6 +29,7 @@ import { populateMeowthLine } from './meowth-line.js';
 import { populateNidoranFLine } from './Nidoran♀-line.js';
 import { populateNidoranMLine } from './nidoran♂-line.js';
 import { populateOddishLine } from './oddish-line.js';
+import { populateOmanyteLine } from './omanyte-line.js';
 import { populateParasLine } from './paras-line.js';
 import { populatePidgeyLine } from './pidgey-line.js';
 import { populatePikachuLine } from './pikachu-line.js';
@@ -100,6 +104,10 @@ export const populateGenIEvos = async () => {
   count += await populateGoldeenLine();
   count += await populateStaryuLine();
   count += await populateMagikarpLine();
+  count += await populateEeveeLine();
+  count += await populateOmanyteLine();
+  count += await populateKabutoLine();
+  count += await populateDratiniLine();
 
   return count;
 }

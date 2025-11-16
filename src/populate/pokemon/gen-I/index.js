@@ -11,6 +11,8 @@ import { populate0091To0100 } from './0091-0100.js';
 import { populate0101To0110 } from './0101-0110.js';
 import { populate0111To0120 } from './0111-0120.js';
 import { populate0121To0130 } from './0121-0130.js';
+import { populate0131To0140 } from './0131-0140.js';
+import { populate0141To0151 } from './0141-0151.js';
 
 export const populateGenI = async (typeMap) => {
   let count = 0;
@@ -28,6 +30,8 @@ export const populateGenI = async (typeMap) => {
   count += await populate0101To0110(typeMap);
   count += await populate0111To0120(typeMap);
   count += await populate0121To0130(typeMap);
+  count += await populate0131To0140(typeMap);
+  count += await populate0141To0151(typeMap);
   
   return count;
 }
